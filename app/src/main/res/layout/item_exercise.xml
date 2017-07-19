@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageViewExercise"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="false"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+
+    <TextView
+        android:id="@+id/textViewExerciseName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageViewExercise"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_toEndOf="@+id/imageViewExercise"
+        android:layout_toRightOf="@+id/imageViewExercise"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/textViewWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_alignBottom="@+id/imageViewExercise"
+        android:layout_alignLeft="@+id/textViewExerciseName"
+        android:layout_alignStart="@+id/textViewExerciseName"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

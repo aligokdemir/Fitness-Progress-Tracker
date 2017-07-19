@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.gokdemir.fitnessprogresstracker.activity.addNewExercise">
+
+    <TextView
+        android:id="@+id/textViewExplanation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="You can enter the details about exercise below."
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="36dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp" />
+
+    <EditText
+        android:id="@+id/editTextExerciseName"
+        android:maxLength="25"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Exercise name"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginTop="135dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextCurrentWeight"
+        android:layout_width="0dp"
+        android:maxLength="4"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:hint="Current weight you lift"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintTop_toBottomOf="@+id/editTextExerciseName"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginTop="27dp" />
+
+    <Button
+        android:id="@+id/buttonSaveExercise"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Add New Exercise"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/editTextCurrentWeight"
+        android:layout_marginTop="74dp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCurrentWeight"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/editTextCurrentWeight"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonDisplayExercise"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Dısplay Exercıse"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/buttonSaveExercise"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSaveExercise"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/buttonSaveExercise"
+        android:layout_marginTop="0dp"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+
+</android.support.constraint.ConstraintLayout>
