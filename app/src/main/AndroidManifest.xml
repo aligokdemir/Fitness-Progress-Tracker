@@ -19,10 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-        <activity android:name=".activity.addNewExercise">
-        </activity>
+        <activity android:name=".activity.addNewExercise"></activity>
+        <activity
+            android:name=".activity.updateExercise"
+            android:label="@string/title_activity_update_exercise"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -29,4 +29,12 @@ public  class SharedPrefManager {
 
         return lstExerciseList;
     }
+
+    public String getPrefName(){
+        return prefName;
+    }
+
+    public String getKey(){
+        return key;
+    }
 }

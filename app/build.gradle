@@ -12,7 +12,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
-        debug{
+        debug {
             debuggable true
         }
         release {
@@ -33,5 +33,6 @@ dependencies {
     compile 'com.google.code.gson:gson:2.7'
     testCompile 'junit:junit:4.12'
 }
+
 
 

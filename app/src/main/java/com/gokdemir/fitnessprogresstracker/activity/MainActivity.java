@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.gokdemir.fitnessprogresstracker.R;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        toolbar.setTitle("My Exercises");
 
         listViewPopulator();
 
@@ -39,6 +40,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        exerciseList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent updateExerciseIntent = new Intent(MainActivity.this, updateExercise.class);
+                updateExerciseIntent.putExtra("exerciseIndex", position);
+                startActivity(updateExerciseIntent);
+            }
+        });
 
 
     }
