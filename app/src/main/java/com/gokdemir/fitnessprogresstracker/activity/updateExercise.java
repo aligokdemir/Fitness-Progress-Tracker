@@ -79,6 +79,7 @@ public class updateExercise extends AppCompatActivity {
                 editor = sharedPreferences.edit();
                 //editor.remove(sharedPrefManager.getKey());
                 editor.putString(sharedPrefManager.getKey(), json);
+                editor.commit();
 
                 startActivity(new Intent(updateExercise.this, MainActivity.class));
 
