@@ -7,11 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.gokdemir.fitnessprogresstracker.R;
+import com.gokdemir.fitnessprogresstracker.data.Constants;
 import com.gokdemir.fitnessprogresstracker.data.Exercise;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -22,7 +25,7 @@ import java.util.List;
 public class addNewExercise extends AppCompatActivity {
     Button buttonSaveExercise;
     Button buttonDisplayExercise;
-    EditText editTextExerciseName;
+    AutoCompleteTextView editTextExerciseName;
     EditText editTextCurrentWeight;
 
     ArrayList<Exercise> exerciseList = new ArrayList<>();
@@ -34,11 +37,16 @@ public class addNewExercise extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_exercise);
+        //yigit
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, Constants.workouts);
 
         buttonSaveExercise = (Button) findViewById(R.id.buttonSaveExercise);
         buttonDisplayExercise = (Button) findViewById(R.id.buttonDisplayExercise);
 
-        editTextExerciseName = (EditText) findViewById(R.id.editTextExerciseName);
+        editTextExerciseName = (AutoCompleteTextView) findViewById(R.id.editTextExerciseName);
+        editTextExerciseName.setAdapter(adapter);
+
         editTextCurrentWeight = (EditText) findViewById(R.id.editTextCurrentWeight);
 
         buttonSaveExercise.setOnClickListener(new View.OnClickListener() {
@@ -55,8 +63,10 @@ public class addNewExercise extends AppCompatActivity {
     }
 
     private void addNewExercise(){
+
         Exercise exercise = new Exercise(editTextExerciseName.getText().toString(), editTextCurrentWeight.getText().toString());
         exerciseList.add(exercise);
+
 
         SharedPreferences sharedPreferences = getSharedPreferences(prefName, MODE_PRIVATE);
         SharedPreferences.Editor editor;
