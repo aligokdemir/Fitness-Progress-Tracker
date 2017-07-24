@@ -67,7 +67,7 @@
 
     <Button
         android:id="@+id/buttonSaveExercise"
-        style="@android:style/Widget.DeviceDefault.Light.Button.Borderless"
+        android:background="?android:attr/selectableItemBackground"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="74dp"
@@ -82,7 +82,7 @@
 
     <Button
         android:id="@+id/buttonDisplayExercise"
-        style="@android:style/Widget.DeviceDefault.Button.Borderless"
+        android:background="?android:attr/selectableItemBackground"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"

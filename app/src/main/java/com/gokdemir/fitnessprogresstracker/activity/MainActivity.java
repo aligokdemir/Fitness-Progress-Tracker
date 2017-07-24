@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Exercise> exercises = manager.readSharedPref(this);
         ListViewAdapter adapter = new ListViewAdapter(this, exercises);
         exerciseList.setAdapter(adapter);
-        Log.i("size", String.valueOf(exercises.size()));
+        //Log.i("size", String.valueOf(exercises.size()));
     }
 
 }
