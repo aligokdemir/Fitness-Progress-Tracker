@@ -77,7 +77,6 @@ public class updateExercise extends AppCompatActivity {
 
                 String json = gson.toJson(exercises);
                 editor = sharedPreferences.edit();
-                //editor.remove(sharedPrefManager.getKey());
                 editor.putString(sharedPrefManager.getKey(), json);
                 editor.commit();
 
