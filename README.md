@@ -6,6 +6,7 @@ see the progress they've made with graphical representation.
 What is added till now:
 
 * Users can add exercises to their routine.
+* Users can delete exercises from their routine.
 * Users can update the weights they are lifting for a specific exercise.
 * Exercise recommendation when the user is typing the name of the exercise.
 
