@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("My Exercises");
 
+        //generating the list view with this function.
         listViewPopulator();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.buttonAddNewExercise);
@@ -86,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
 
                         adapter.notifyDataSetChanged();
 
+                        finish();
+                        startActivity(getIntent());
                     }
                 });
                 builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

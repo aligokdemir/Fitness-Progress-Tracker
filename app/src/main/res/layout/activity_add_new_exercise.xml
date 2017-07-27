@@ -80,20 +80,5 @@
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1" />
 
-    <Button
-        android:id="@+id/buttonDisplayExercise"
-        android:background="?android:attr/selectableItemBackground"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
-        android:text="Dısplay Exercıse"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="@+id/buttonSaveExercise"
-        app:layout_constraintRight_toRightOf="@+id/buttonSaveExercise"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSaveExercise"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
-
 
 </android.support.constraint.ConstraintLayout>

@@ -24,7 +24,6 @@ import java.util.List;
 
 public class addNewExercise extends AppCompatActivity {
     Button buttonSaveExercise;
-    Button buttonDisplayExercise;
     AutoCompleteTextView editTextExerciseName;
     EditText editTextCurrentWeight;
 
@@ -42,7 +41,6 @@ public class addNewExercise extends AppCompatActivity {
                 android.R.layout.simple_dropdown_item_1line, Constants.workouts);
 
         buttonSaveExercise = (Button) findViewById(R.id.buttonSaveExercise);
-        buttonDisplayExercise = (Button) findViewById(R.id.buttonDisplayExercise);
 
         editTextExerciseName = (AutoCompleteTextView) findViewById(R.id.editTextExerciseName);
         editTextExerciseName.setAdapter(adapter);
@@ -56,10 +54,6 @@ public class addNewExercise extends AppCompatActivity {
             }
         });
 
-        buttonDisplayExercise.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { displayData(); }
-        });
     }
 
     private void addNewExercise(){

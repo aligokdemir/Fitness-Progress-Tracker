@@ -27,6 +27,7 @@ public class updateExercise extends AppCompatActivity {
     EditText lastWeight;
 
     Button updateWeight;
+    Button displayGraph;
 
     Gson gson;
 
@@ -49,9 +50,9 @@ public class updateExercise extends AppCompatActivity {
 
         exercises = gson.fromJson(response, new TypeToken<ArrayList<Exercise>>(){}.getType());
 
-
         lastWeight = (EditText) findViewById(R.id.editTextLastWeight);
         updateWeight = (Button) findViewById(R.id.buttonUpdateWeight);
+        displayGraph = (Button) findViewById(R.id.buttonDisplayGraph);
 
         if(savedInstanceState == null){
             Bundle extras = getIntent().getExtras();
@@ -64,6 +65,7 @@ public class updateExercise extends AppCompatActivity {
         } else{
             exercisePosition = (int) savedInstanceState.getSerializable("exerciseIndex");
         }
+
 
         //setting toolbar title acc. to exercise user clicked
         toolbar.setTitle(exercises.get(exercisePosition).getName());
@@ -82,6 +84,16 @@ public class updateExercise extends AppCompatActivity {
 
                 startActivity(new Intent(updateExercise.this, MainActivity.class));
 
+            }
+        });
+
+
+        displayGraph.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent graphPage = new Intent(updateExercise.this, graphActivity.class);
+                graphPage.putExtra("position", exercisePosition);
+                startActivity(graphPage);
             }
         });
 
