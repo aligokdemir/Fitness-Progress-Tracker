@@ -70,7 +70,6 @@ public class updateExercise extends AppCompatActivity {
         //setting toolbar title acc. to exercise user clicked
         toolbar.setTitle(exercises.get(exercisePosition).getName());
 
-
         updateWeight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,7 +85,6 @@ public class updateExercise extends AppCompatActivity {
 
             }
         });
-
 
         displayGraph.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -27,7 +27,6 @@
         <activity
             android:name=".activity.graphActivity"
             android:label="@string/title_activity_graph"
-            android:parentActivityName=".activity.updateExercise"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

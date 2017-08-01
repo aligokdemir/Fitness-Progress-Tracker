@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent updateExerciseIntent = new Intent(MainActivity.this, updateExercise.class);
                 updateExerciseIntent.putExtra("exerciseIndex", position);
                 startActivity(updateExerciseIntent);
+
             }
         });
 

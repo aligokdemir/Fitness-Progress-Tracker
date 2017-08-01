@@ -52,14 +52,14 @@ public class graphActivity extends AppCompatActivity {
 
         graph = (GraphView) findViewById(R.id.graph);
         textViewGraphExp = (TextView) findViewById(R.id.textViewGraphExp);
-
-
+        
         ArrayList<Exercise> exercises= sharedPrefManager.readSharedPref(this);
 
         //getting the exercise from exercises array list so that the specific graph for the exercise can be shown.
         Exercise exercise = exercises.get(exercisePosition);
-        textViewGraphExp.setText("The graph for " + exercise.getName() + "is below.");
+        textViewGraphExp.setText("The graph for " + exercise.getName() + " is below.");
 
+        //data point array cannot be created dynamically so, need to use static array
         DataPoint[] dataPoints = new DataPoint[30];
 
         for(int x = 0; x <= exercise.getWeights().size(); x++){
