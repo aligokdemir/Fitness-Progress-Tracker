@@ -1,6 +1,7 @@
 package com.gokdemir.fitnessprogresstracker.data;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by gokde on 13.07.2017.
@@ -9,16 +10,13 @@ import java.util.ArrayList;
 public class Exercise {
     private String name;
     private ArrayList<String> weights;
-
-    //public Exercise(){
-    //    this.weights = new ArrayList<String>();
-    //}
+    private Date lastDone;
 
     public Exercise(String exerciseName, String weight){
         this.name = new String(exerciseName);
         this.weights = new ArrayList<String>();
         weights.add(weight);
-
+        //date initialization will be added later on.
     }
 
     public void setName(String name){

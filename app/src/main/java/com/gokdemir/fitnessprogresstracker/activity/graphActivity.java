@@ -34,8 +34,10 @@ public class graphActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graph);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         //getting the exercise position from caller activity and proceeding accordingly...
         if(savedInstanceState == null){
@@ -52,25 +54,28 @@ public class graphActivity extends AppCompatActivity {
 
         graph = (GraphView) findViewById(R.id.graph);
         textViewGraphExp = (TextView) findViewById(R.id.textViewGraphExp);
-        
+
         ArrayList<Exercise> exercises= sharedPrefManager.readSharedPref(this);
 
         //getting the exercise from exercises array list so that the specific graph for the exercise can be shown.
         Exercise exercise = exercises.get(exercisePosition);
+        toolbar.setTitle("Graph for " + exercise.getName());
         textViewGraphExp.setText("The graph for " + exercise.getName() + " is below.");
 
-        //data point array cannot be created dynamically so, need to use static array
-        DataPoint[] dataPoints = new DataPoint[30];
+        //DataPoint[] dataPoints = new DataPoint[4];
+        ArrayList<DataPoint> dataPoints = new ArrayList<>();
 
-        for(int x = 0; x <= exercise.getWeights().size(); x++){
-            dataPoints[x] = new DataPoint(x, Integer.valueOf(exercise.getWeights().get(x)));
+        for(int x = 0; x < exercise.getWeights().size(); x++){
+            dataPoints.add(new DataPoint(x, Double.valueOf(exercise.getWeights().get(x))));
         }
 
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(dataPoints);
+        //converting array list to static array so that constructor of LineGraphSeries does not complain...
+        DataPoint[] dataPointsArr = new DataPoint[dataPoints.size()];
+        dataPointsArr = dataPoints.toArray(dataPointsArr);
+
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(dataPointsArr);
 
         graph.addSeries(series);
-
-
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
