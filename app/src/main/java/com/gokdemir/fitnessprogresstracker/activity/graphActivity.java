@@ -38,7 +38,6 @@ public class graphActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         //getting the exercise position from caller activity and proceeding accordingly...
         if(savedInstanceState == null){
             Bundle extras = getIntent().getExtras();
@@ -62,7 +61,6 @@ public class graphActivity extends AppCompatActivity {
         toolbar.setTitle("Graph for " + exercise.getName());
         textViewGraphExp.setText("The graph for " + exercise.getName() + " is below.");
 
-        //DataPoint[] dataPoints = new DataPoint[4];
         ArrayList<DataPoint> dataPoints = new ArrayList<>();
 
         for(int x = 0; x < exercise.getWeights().size(); x++){
