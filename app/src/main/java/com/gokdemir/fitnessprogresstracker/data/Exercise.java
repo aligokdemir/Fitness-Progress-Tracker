@@ -1,5 +1,6 @@
 package com.gokdemir.fitnessprogresstracker.data;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -10,13 +11,13 @@ import java.util.Date;
 public class Exercise {
     private String name;
     private ArrayList<String> weights;
-    private Date lastDone;
+    private String lastDone; //this variable will hold the date the exercise is last done.
 
     public Exercise(String exerciseName, String weight){
         this.name = new String(exerciseName);
-        this.weights = new ArrayList<String>();
+        this.weights = new ArrayList<>();
         weights.add(weight);
-        //date initialization will be added later on.
+        this.lastDone = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
     }
 
     public void setName(String name){
@@ -43,4 +44,7 @@ public class Exercise {
         this.weights.remove(weights.size() - 1);
     }
 
+    public void setLastDone(){ this.lastDone = new SimpleDateFormat("dd-MM-yyyy").format(new Date()); }
+
+    public String getLastDone(){ return lastDone; }
 }

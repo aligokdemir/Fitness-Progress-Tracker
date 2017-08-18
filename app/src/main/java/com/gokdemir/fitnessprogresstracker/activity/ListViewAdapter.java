@@ -63,7 +63,8 @@ public class ListViewAdapter extends BaseAdapter {
         imageView.setImageResource(R.drawable.listviewimage);
 
         textViewExerciseName.setText(exercise.getName());
-        textViewWeight.setText("Last weight you lift: "+exercise.getLastWeight());
+        textViewWeight.setText("Last lift: "+exercise.getLastWeight() + "kg" +
+                "Last Date Done: " + exercise.getLastDone());
 
         return rowView;
     }

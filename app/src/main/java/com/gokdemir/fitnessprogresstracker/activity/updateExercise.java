@@ -74,6 +74,8 @@ public class updateExercise extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 exercises.get(exercisePosition).addWeight(lastWeight.getText().toString());
+                exercises.get(exercisePosition).setLastDone();  //when the update button is tapped, the date is taken from the system
+
                 SharedPreferences.Editor editor;
 
                 String json = gson.toJson(exercises);
